@@ -1,0 +1,211 @@
+src/
+├── config/
+│   ├── app.js
+│   ├── database.js
+│   ├── cache.js
+│   ├── queue.js
+│   ├── storage.js
+│   ├── auth.js
+│   ├── roles.js
+│   └── plugins.js
+├── core/
+│   ├── app.js
+│   ├── container.js
+│   ├── event-bus.js
+│   ├── logger.js
+│   ├── module-loader.js
+│   └── error-handler.js
+├── modules/
+│   ├── user/
+│   │   ├── controllers/
+│   │   │   ├── user-controller.js
+│   │   │   └── auth-controller.js
+│   │   ├── services/
+│   │   │   ├── user-service.js
+│   │   │   └── auth-service.js
+│   │   ├── models/
+│   │   │   └── user-model.js
+│   │   ├── events/
+│   │   │   └── user-events.js
+│   │   ├── routes/
+│   │   │   └── user-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   └── integration/
+│   │   └── index.js
+│   ├── content/
+│   │   ├── controllers/
+│   │   │   ├── page-controller.js
+│   │   │   ├── post-controller.js
+│   │   │   └── category-controller.js
+│   │   ├── services/
+│   │   │   ├── page-service.js
+│   │   │   ├── post-service.js
+│   │   │   └── category-service.js
+│   │   ├── models/
+│   │   │   ├── page-model.js
+│   │   │   ├── post-model.js
+│   │   │   └── category-model.js
+│   │   ├── events/
+│   │   │   └── content-events.js
+│   │   ├── routes/
+│   │   │   └── content-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   └── integration/
+│   │   └── index.js
+│   ├── media/
+│   │   ├── controllers/
+│   │   │   ├── media-controller.js
+│   │   │   └── upload-controller.js
+│   │   ├── services/
+│   │   │   ├── media-service.js
+│   │   │   ├── image-processor.js
+│   │   │   └── video-processor.js
+│   │   ├── models/
+│   │   │   └── media-model.js
+│   │   ├── events/
+│   │   │   └── media-events.js
+│   │   ├── routes/
+│   │   │   └── media-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   └── integration/
+│   │   └── index.js
+│   └── search/
+│       ├── controllers/
+│       │   └── search-controller.js
+│       ├── services/
+│       │   └── search-service.js
+│       ├── models/
+│       │   └── search-model.js
+│       ├── events/
+│       │   └── search-events.js
+│       ├── routes/
+│       │   └── search-routes.js
+│       ├── tests/
+│       │   ├── unit/
+│       │   └── integration/
+│       └── index.js
+├── infrastructure/
+│   ├── database/
+│   │   ├── migrations/
+│   │   │   ├── create-users-table.js
+│   │   │   ├── create-posts-table.js
+│   │   │   └── ...
+│   │   ├── seeders/
+│   │   │   ├── users-seeder.js
+│   │   │   ├── posts-seeder.js
+│   │   │   └── ...
+│   │   ├── models/
+│   │   │   ├── index.js
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── cache/
+│   │   ├── redis-cache.js
+│   │   └── memory-cache.js
+│   ├── queue/
+│   │   ├── bull-queue.js
+│   │   └── job-processor.js
+│   └── storage/
+│       ├── local-storage.js
+│       ├── s3-storage.js
+│       └── storage-manager.js
+├── interfaces/
+│   ├── http/
+│   │   ├── controllers/
+│   │   │   ├── health-check-controller.js
+│   │   │   └── ...
+│   │   ├── middlewares/
+│   │   │   ├── error-middleware.js
+│   │   │   ├── auth-middleware.js
+│   │   │   ├── validation-middleware.js
+│   │   │   └── ...
+│   │   ├── requests/
+│   │   │   ├── create-user-request.js
+│   │   │   ├── update-post-request.js
+│   │   │   └── ...
+│   │   ├── responses/
+│   │   │   ├── api-response.js
+│   │   │   ├── error-response.js
+│   │   │   └── ...
+│   │   └── routes.js
+│   ├── graphql/
+│   │   ├── schemas/
+│   │   │   ├── user-schema.js
+│   │   │   ├── post-schema.js
+│   │   │   └── ...
+│   │   ├── resolvers/
+│   │   │   ├── user-resolver.js
+│   │   │   ├── post-resolver.js
+│   │   │   └── ...
+│   │   └── index.js
+│   └── cli/
+│       ├── commands/
+│       │   ├── migrate-command.js
+│       │   ├── seed-command.js
+│       │   └── ...
+│       └── index.js
+├── domain/
+│   ├── user/
+│   │   ├── user.js
+│   │   ├── user-service.js
+│   │   └── user-events.js
+│   ├── content/
+│   │   ├── content.js
+│   │   ├── content-service.js
+│   │   └── content-events.js
+│   ├── media/
+│   │   ├── media.js
+│   │   ├── media-service.js
+│   │   └── media-events.js
+│   └── search/
+│       ├── search.js
+│       ├── search-service.js
+│       └── search-events.js
+├── ui/
+│   ├── themes/
+│   │   ├── default/
+│   │   │   ├── assets/
+│   │   │   ├── layouts/
+│   │   │   ├── pages/
+│   │   │   └── partials/
+│   │   └── admin/
+│   │       ├── assets/
+│   │       ├── layouts/
+│   │       ├── pages/
+│   │       └── partials/
+│   ├── vue/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── router/
+│   │   ├── store/
+│   │   └── app.js
+│   └── react/
+│       ├── components/
+│       ├── pages/
+│       ├── hooks/
+│       ├── context/
+│       └── app.js
+├── plugins/
+│   ├── auth/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   └── payment/
+│       ├── controllers/
+│       ├── services/
+│       ├── models/
+│       ├── events/
+│       ├── routes/
+│       ├── tests/
+│       └── index.js
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+└── index.js
