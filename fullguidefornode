@@ -1,0 +1,1261 @@
+src/
+├── config/
+│   ├── app.js
+│   ├── database.js
+│   ├── cache.js
+│   ├── queue.js
+│   ├── storage.js
+│   ├── auth.js
+│   ├── roles.js
+│   ├── plugins.js
+│   ├── security.js
+│   ├── logger.js
+│   ├── docs.js
+│   ├── filesystems.js
+│   ├── cors.js
+│   ├── i18n.js
+│   ├── media.js
+│   ├── rbac.js
+│   └── realtime.js
+├── core/
+│   ├── app.js
+│   ├── container.js
+│   ├── event-bus.js
+│   ├── logger.js
+│   ├── module-loader.js
+│   ├── error-handler.js
+│   ├── security/
+│   │   ├── authentication.js
+│   │   ├── authorization.js
+│   │   ├── encryption.js
+│   │   ├── validation.js
+│   │   └── sanitization.js
+│   ├── logging/
+│   │   ├── logger-factory.js
+│   │   ├── formatters/
+│   │   │   ├── json-formatter.js
+│   │   │   ├── text-formatter.js
+│   │   │   └── csv-formatter.js
+│   │   └── handlers/
+│   │       ├── console-handler.js
+│   │       ├── file-handler.js
+│   │       └── database-handler.js
+│   ├── filesystem/
+│   │   ├── filesystem-manager.js
+│   │   └── drivers/
+│   │       ├── local-driver.js
+│   │       ├── s3-driver.js
+│   │       └── ftp-driver.js
+│   ├── cors/
+│   │   └── cors-middleware.js
+│   ├── i18n/
+│   │   ├── i18n-manager.js
+│   │   └── locales/
+│   │       ├── en.json
+│   │       ├── es.json
+│   │       ├── fr.json
+│   │       └── ...
+│   ├── rbac/
+│   │   ├── rbac-manager.js
+│   │   ├── roles.js
+│   │   └── permissions.js
+│   └── realtime/
+│       ├── realtime-manager.js
+│       ├── websocket-server.js
+│       └── socketio-server.js
+├── modules/
+│   ├── user/
+│   │   ├── controllers/
+│   │   │   ├── user-controller.js
+│   │   │   └── auth-controller.js
+│   │   ├── services/
+│   │   │   ├── user-service.js
+│   │   │   └── auth-service.js
+│   │   ├── models/
+│   │   │   ├── user-model.js
+│   │   │   └── role-model.js
+│   │   ├── events/
+│   │   │   ├── user-created-event.js
+│   │   │   ├── user-updated-event.js
+│   │   │   ├── user-deleted-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── user-routes.js
+│   │   │   └── auth-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── user-controller.test.js
+│   │   │   │   ├── user-service.test.js
+│   │   │   │   ├── auth-controller.test.js
+│   │   │   │   └── auth-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── user-routes.test.js
+│   │   │       └── auth-routes.test.js
+│   │   └── index.js
+│   ├── content/
+│   │   ├── controllers/
+│   │   │   ├── page-controller.js
+│   │   │   ├── post-controller.js
+│   │   │   └── category-controller.js
+│   │   ├── services/
+│   │   │   ├── page-service.js
+│   │   │   ├── post-service.js
+│   │   │   └── category-service.js
+│   │   ├── models/
+│   │   │   ├── page-model.js
+│   │   │   ├── post-model.js
+│   │   │   └── category-model.js
+│   │   ├── events/
+│   │   │   ├── page-created-event.js
+│   │   │   ├── page-updated-event.js
+│   │   │   ├── post-created-event.js
+│   │   │   ├── post-updated-event.js
+│   │   │   ├── category-created-event.js
+│   │   │   ├── category-updated-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── page-routes.js
+│   │   │   ├── post-routes.js
+│   │   │   └── category-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── page-controller.test.js
+│   │   │   │   ├── post-controller.test.js
+│   │   │   │   ├── category-controller.test.js
+│   │   │   │   ├── page-service.test.js
+│   │   │   │   ├── post-service.test.js
+│   │   │   │   └── category-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── page-routes.test.js
+│   │   │       ├── post-routes.test.js
+│   │   │       └── category-routes.test.js
+│   │   └── index.js
+│   ├── media/
+│   │   ├── controllers/
+│   │   │   ├── media-controller.js
+│   │   │   └── upload-controller.js
+│   │   ├── services/
+│   │   │   ├── media-service.js
+│   │   │   ├── upload-service.js
+│   │   │   ├── image-processor.js
+│   │   │   ├── video-processor.js
+│   │   │   ├── image-resizer.js
+│   │   │   └── video-converter.js
+│   │   ├── models/
+│   │   │   ├── media-model.js
+│   │   │   └── upload-model.js
+│   │   ├── events/
+│   │   │   ├── media-uploaded-event.js
+│   │   │   ├── media-updated-event.js
+│   │   │   ├── media-deleted-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── media-routes.js
+│   │   │   └── upload-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── media-controller.test.js
+│   │   │   │   ├── upload-controller.test.js
+│   │   │   │   ├── media-service.test.js
+│   │   │   │   └── upload-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── media-routes.test.js
+│   │   │       └── upload-routes.test.js
+│   │   ├── config/
+│   │   │   ├── media-strategies.js
+│   │   │   ├── image-sizes.js
+│   │   │   └── video-formats.js
+│   │   └── index.js
+│   ├── search/
+│   │   ├── controllers/
+│   │   │   ├── search-controller.js
+│   │   │   └── filter-controller.js
+│   │   ├── services/
+│   │   │   ├── search-service.js
+│   │   │   ├── indexing-service.js
+│   │   │   └── filter-service.js
+│   │   ├── models/
+│   │   │   ├── search-model.js
+│   │   │   └── index-model.js
+│   │   ├── events/
+│   │   │   ├── search-performed-event.js
+│   │   │   ├── index-created-event.js
+│   │   │   ├── index-updated-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── search-routes.js
+│   │   │   └── filter-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── search-controller.test.js
+│   │   │   │   ├── filter-controller.test.js
+│   │   │   │   ├── search-service.test.js
+│   │   │   │   ├── indexing-service.test.js
+│   │   │   │   └── filter-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── search-routes.test.js
+│   │   │       └── filter-routes.test.js
+│   │   ├── config/
+│   │   │   ├── search-settings.js
+│   │   │   └── index-settings.js
+│   │   └── index.js
+│   ├── analytics/
+│   │   ├── controllers/
+│   │   │   ├── analytics-controller.js
+│   │   │   └── report-controller.js
+│   │   ├── services/
+│   │   │   ├── analytics-service.js
+│   │   │   ├── tracking-service.js
+│   │   │   └── report-service.js
+│   │   ├── models/
+│   │   │   ├── analytics-model.js
+│   │   │   ├── event-model.js
+│   │   │   └── report-model.js
+│   │   ├── events/
+│   │   │   ├── page-viewed-event.js
+│   │   │   ├── user-signup-event.js
+│   │   │   ├── user-login-event.js
+│   │   │   ├── user-activity-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── analytics-routes.js
+│   │   │   └── report-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── analytics-controller.test.js
+│   │   │   │   ├── report-controller.test.js
+│   │   │   │   ├── analytics-service.test.js
+│   │   │   │   ├── tracking-service.test.js
+│   │   │   │   └── report-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── analytics-routes.test.js
+│   │   │       └── report-routes.test.js
+│   │   ├── config/
+│   │   │   ├── analytics-settings.js
+│   │   │   └── tracking-settings.js
+│   │   └── index.js
+│   ├── workflow/
+│   │   ├── controllers/
+│   │   │   ├── workflow-controller.js
+│   │   │   ├── task-controller.js
+│   │   │   └── transition-controller.js
+│   │   ├── services/
+│   │   │   ├── workflow-service.js
+│   │   │   ├── task-service.js
+│   │   │   └── transition-service.js
+│   │   ├── models/
+│   │   │   ├── workflow-model.js
+│   │   │   ├── task-model.js
+│   │   │   ├── transition-model.js
+│   │   │   └── state-model.js
+│   │   ├── events/
+│   │   │   ├── workflow-created-event.js
+│   │   │   ├── workflow-updated-event.js
+│   │   │   ├── task-created-event.js
+│   │   │   ├── task-updated-event.js
+│   │   │   ├── transition-created-event.js
+│   │   │   ├── transition-updated-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── workflow-routes.js
+│   │   │   ├── task-routes.js
+│   │   │   └── transition-routes.js
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── workflow-controller.test.js
+│   │   │   │   ├── task-controller.test.js
+│   │   │   │   ├── transition-controller.test.js
+│   │   │   │   ├── workflow-service.test.js
+│   │   │   │   ├── task-service.test.js
+│   │   │   │   └── transition-service.test.js
+│   │   │   └── integration/
+│   │   │       ├── workflow-routes.test.js
+│   │   │       ├── task-routes.test.js
+│   │   │       └── transition-routes.test.js
+│   │   ├── config/
+│   │   │   ├── workflow-settings.js
+│   │   │   └── task-settings.js
+│   │   └── index.js
+│   └── api/
+│       ├── controllers/
+│       │   ├── api-controller.js
+│       │   └── documentation-controller.js
+│       ├── middlewares/
+│       │   ├── authentication-middleware.js
+│       │   ├── authorization-middleware.js
+│       │   ├── validation-middleware.js
+│       │   ├── error-handling-middleware.js
+│       │   ├── rate-limiting-middleware.js
+│       │   └── logging-middleware.js
+│       ├── routes/
+│       │   ├── v1/
+│       │   │   ├── user-routes.js
+│       │   │   ├── content-routes.js
+│       │   │   ├── media-routes.js
+│       │   │   ├── search-routes.js
+│       │   │   ├── analytics-routes.js
+│       │   │   ├── workflow-routes.js
+│       │   │   └── ...
+│       │   └── v2/
+│       │       ├── user-routes.js
+│       │       ├── content-routes.js
+│       │       ├── media-routes.js
+│       │       ├── search-routes.js
+│       │       ├── analytics-routes.js
+│       │       ├── workflow-routes.js
+│       │       └── ...
+│       ├── tests/
+│       │   ├── unit/
+│       │   │   ├── api-controller.test.js
+│
+│       │   │   └── documentation-controller.test.js
+│       │   └── integration/
+│       │       ├── v1/
+│       │       │   ├── user-routes.test.js
+│       │       │   ├── content-routes.test.js
+│       │       │   ├── media-routes.test.js
+│       │       │   ├── search-routes.test.js
+│       │       │   ├── analytics-routes.test.js
+│       │       │   ├── workflow-routes.test.js
+│       │       │   └── ...
+│       │       └── v2/
+│       │           ├── user-routes.test.js
+│       │           ├── content-routes.test.js
+│       │           ├── media-routes.test.js
+│       │           ├── search-routes.test.js
+│       │           ├── analytics-routes.test.js
+│       │           ├── workflow-routes.test.js
+│       │           └── ...
+│       ├── config/
+│       │   ├── api-settings.js
+│       │   ├── versioning.js
+│       │   ├── rate-limiting.js
+│       │   └── documentation-settings.js
+│       └── index.js
+├── infrastructure/
+│   ├── database/
+│   │   ├── migrations/
+│   │   │   ├── create-users-table.js
+│   │   │   ├── create-roles-table.js
+│   │   │   ├── create-permissions-table.js
+│   │   │   ├── create-posts-table.js
+│   │   │   ├── create-categories-table.js
+│   │   │   ├── create-tags-table.js
+│   │   │   ├── create-comments-table.js
+│   │   │   ├── create-pages-table.js
+│   │   │   ├── create-media-table.js
+│   │   │   ├── create-uploads-table.js
+│   │   │   ├── create-analytics-table.js
+│   │   │   ├── create-reports-table.js
+│   │   │   ├── create-workflows-table.js
+│   │   │   ├── create-tasks-table.js
+│   │   │   ├── create-transitions-table.js
+│   │   │   ├── create-states-table.js
+│   │   │   └── ...
+│   │   ├── seeders/
+│   │   │   ├── users-seeder.js
+│   │   │   ├── roles-seeder.js
+│   │   │   ├── permissions-seeder.js
+│   │   │   ├── posts-seeder.js
+│   │   │   ├── categories-seeder.js
+│   │   │   ├── tags-seeder.js
+│   │   │   ├── comments-seeder.js
+│   │   │   ├── pages-seeder.js
+│   │   │   └── ...
+│   │   ├── models/
+│   │   │   ├── index.js
+│   │   │   ├── user.js
+│   │   │   ├── role.js
+│   │   │   ├── permission.js
+│   │   │   ├── post.js
+│   │   │   ├── category.js
+│   │   │   ├── tag.js
+│   │   │   ├── comment.js
+│   │   │   ├── page.js
+│   │   │   ├── media.js
+│   │   │   ├── upload.js
+│   │   │   ├── analytics.js
+│   │   │   ├── report.js
+│   │   │   ├── workflow.js
+│   │   │   ├── task.js
+│   │   │   ├── transition.js
+│   │   │   ├── state.js
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── cache/
+│   │   ├── redis-cache.js
+│   │   ├── memcached-cache.js
+│   │   └── in-memory-cache.js
+│   ├── queue/
+│   │   ├── bull-queue.js
+│   │   ├── kafka-queue.js
+│   │   └── sqs-queue.js
+│   ├── storage/
+│   │   ├── local-storage.js
+│   │   ├── s3-storage.js
+│   │   ├── azure-storage.js
+│   │   └── gcs-storage.js
+│   ├── logger/
+│   │   ├── console-logger.js
+│   │   ├── file-logger.js
+│   │   ├── database-logger.js
+│   │   └── logger-manager.js
+│   ├── docs/
+│   │   ├── swagger/
+│   │   │   ├── swagger.json
+│   │   │   ├── swagger-ui/
+│   │   │   │   ├── index.html
+│   │   │   │   ├── swagger-ui.css
+│   │   │   │   ├── swagger-ui-bundle.js
+│   │   │   │   ├── swagger-ui-standalone-preset.js
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   └── postman/
+│   │       ├── collection.json
+│   │       └── environment.json
+│   ├── filesystem/
+│   │   ├── local-driver.js
+│   │   ├── s3-driver.js
+│   │   └── ftp-driver.js
+│   └── ...
+├── interfaces/
+│   ├── http/
+│   │   ├── controllers/
+│   │   │   ├── health-check-controller.js
+│   │   │   └── ...
+│   │   ├── middlewares/
+│   │   │   ├── error-middleware.js
+│   │   │   ├── auth-middleware.js
+│   │   │   ├── validation-middleware.js
+│   │   │   ├── cors-middleware.js
+│   │   │   └── ...
+│   │   ├── requests/
+│   │   │   ├── create-user-request.js
+│   │   │   ├── update-post-request.js
+│   │   │   ├── search-request.js
+│   │   │   └── ...
+│   │   ├── responses/
+│   │   │   ├── api-response.js
+│   │   │   ├── error-response.js
+│   │   │   ├── validation-error-response.js
+│   │   │   └── ...
+│   │   └── routes.js
+│   ├── graphql/
+│   │   ├── schemas/
+│   │   │   ├── user-schema.js
+│   │   │   ├── post-schema.js
+│   │   │   ├── category-schema.js
+│   │   │   ├── page-schema.js
+│   │   │   ├── media-schema.js
+│   │   │   ├── search-schema.js
+│   │   │   ├── analytics-schema.js
+│   │   │   └── ...
+│   │   ├── resolvers/
+│   │   │   ├── user-resolver.js
+│   │   │   ├── post-resolver.js
+│   │   │   ├── category-resolver.js
+│   │   │   ├── page-resolver.js
+│   │   │   ├── media-resolver.js
+│   │   │   ├── search-resolver.js
+│   │   │   ├── analytics-resolver.js
+│   │   │   └── ...
+│   │   ├── directives/
+│   │   │   ├── auth-directive.js
+│   │   │   ├── validation-directive.js
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── cli/
+│   │   ├── commands/
+│   │   │   ├── migrate-command.js
+│   │   │   ├── seed-command.js
+│   │   │   ├── cache-clear-command.js
+│   │   │   ├── queue-work-command.js
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── websocket/
+│   │   ├── controllers/
+│   │   │   ├── user-socket-controller.js
+│   │   │   ├── post-socket-controller.js
+│   │   │   ├── notification-socket-controller.js
+│   │   │   └── ...
+│   │   ├── middlewares/
+│   │   │   ├── authentication-middleware.js
+│   │   │   ├── authorization-middleware.js
+│   │   │   └── ...
+│   │   ├── channels/
+│   │   │   ├── user-channel.js
+│   │   │   ├── post-channel.js
+│   │   │   ├── notification-channel.js
+│   │   │   └── ...
+│   │   └── index.js
+│   └── sse/
+│       ├── controllers/
+│       │   ├── user-sse-controller.js
+│       │   ├── post-sse-controller.js
+│       │   ├── notification-sse-controller.js
+│       │   └── ...
+│       ├── middlewares/
+│       │   ├── authentication-middleware.js
+│       │   ├── authorization-middleware.js
+│       │   └── ...
+│       ├── events/
+│       │   ├── user-event.js
+│       │   ├── post-event.js
+│       │   ├── notification-event.js
+│       │   └── ...
+│       └── index.js
+├── domain/
+│   ├── user/
+│   │   ├── user.js
+│   │   ├── role.js
+│   │   ├── permission.js
+│   │   ├── user-service.js
+│   │   └── user-events.js
+│   ├── content/
+│   │   ├── post.js
+│   │   ├── category.js
+│   │   ├── tag.js
+│   │   ├── comment.js
+│   │   ├── page.js
+│   │   ├── content-service.js
+│   │   └── content-events.js
+│   ├── media/
+│   │   ├── media.js
+│   │   ├── upload.js
+│   │   ├── media-service.js
+│   │   ├── media-events.js
+│   │   └── media-utils.js
+│   ├── search/
+│   │   ├── search.js
+│   │   ├── index.js
+│   │   ├── search-service.js
+│   │   └── search-events.js
+│   ├── analytics/
+│   │   ├── analytics.js
+│   │   ├── event.js
+│   │   ├── report.js
+│   │   ├── analytics-service.js
+│   │   └── analytics-events.js
+│   ├── workflow/
+│   │   ├── workflow.js
+│   │   ├── task.js
+│   │   ├── transition.js
+│   │   ├── state.js
+│   │   ├── workflow-service.js
+│   │   └── workflow-events.js
+│   └── listeners/
+│       ├── user-listener.js
+│       ├── content-listener.js
+│       ├── media-listener.js
+│       ├── search-listener.js
+│       ├── analytics-listener.js
+│       ├── workflow-listener.js
+│       └── ...
+├── ui/
+│   ├── themes/
+│   │   ├── default/
+│   │   │   ├── assets/
+│   │   │   │   ├── css/
+│   │   │   │   │   ├── main.css
+│   │   │   │   │   ├── theme.css
+│   │   │   │   │   └── ...
+│   │   │   │   ├── js/
+│   │   │   │   │   ├── main.js
+│   │   │   │   │   ├── theme.js
+│   │   │   │   │   └── ...
+│   │   │   │   └── img/
+│   │   │   │       ├── logo.png
+│   │   │   │       ├── background.jpg
+│   │   │   │       └── ...
+│   │   │   ├── layouts/
+│   │   │   │   ├── default.ejs
+│   │   │   │   ├── post.ejs
+│   │   │   │   ├── page.ejs
+│   │   │   │   └── ...
+│   │   │   └── partials/
+│   │   │       ├── header.ejs
+│   │   │       ├── footer.ejs
+│   │   │       ├── sidebar.ejs
+│   │   │       └── ...
+│   │   └── admin/
+│   │       ├── assets/
+│   │       │   ├── css/
+│   │       │   │   ├── admin.css
+│   │       │   │   └── ...
+│   │       │   ├── js/
+│   │       │   │   ├── admin.js
+│   │       │   │   └── ...
+│   │       │   └── img/
+│   │       │       ├── logo.png
+│   │       │       ├── icons/
+│   │       │       │   ├── dashboard.svg
+│   │       │       │   ├── posts.svg
+│   │       │       │   ├── pages.svg
+│   │       │       │   ├── users.svg
+│   │       │       │   ├── settings.svg
+│   │       │       │   └── ...
+│   │       │       └── ...
+│   │       ├── layouts/
+│   │       │   ├── admin.ejs
+│   │       │   └── ...
+│   │       └── partials/
+│   │           ├── header.ejs
+│   │           ├── sidebar.ejs
+│   │           ├── footer.ejs
+│   │           └── ...
+│   ├── views/
+│   │   ├── pages/
+│   │   │   ├── home.ejs
+│   │   │   ├── about.ejs
+│   │   │   ├── contact.ejs
+│   │   │   └── ...
+│   │   ├── posts/
+│   │   │   ├── index.ejs
+│   │   │   ├── show.ejs
+│   │   │   ├── create.ejs
+│   │   │   ├── edit.ejs
+│   │   │   └── ...
+│   │   ├── categories/
+│   │   │   ├── index.ejs
+│   │   │   ├── show.ejs
+│   │   │   └── ...
+│   │   ├── auth/
+│   │   │   ├── login.ejs
+│   │   │   ├── register.ejs
+│   │   │   ├── forgot-password.ejs
+│   │   │   ├── reset-password.ejs
+│   │   │   └── ...
+│   │   ├── users/
+│   │   │   ├── profile.ejs
+│   │   │   ├── settings.ejs
+│   │   │   └── ...
+│   │   ├── errors/
+│   │   │   ├── 404.ejs
+│   │   │   ├── 500.ejs
+│   │   │   └── ...
+│   │   └── ...
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── main.css
+│   │   │   ├── vendor/
+│   │   │   │   ├── bootstrap.css
+│   │   │   │   ├── jquery-ui.css
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   ├── js/
+│   │   │   ├── main.js
+│   │   │   ├── vendor/
+│   │   │   │   ├── jquery.js
+│   │   │   │   ├── bootstrap.js
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   ├── img/
+│   │   │   ├── logo.png
+│   │   │   ├── icons/
+│   │   │   │   ├── user.svg
+│   │   │   │   ├── search.svg
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   └── fonts/
+│   │       ├── roboto/
+│   │       │   ├── roboto-regular.ttf
+│   │       │   ├── roboto-bold.ttf
+│   │       │   └── ...
+│   │       └── ...
+│   ├── vue/
+│   │   ├── components/
+│   │   │   ├── Header.vue
+│   │   │   ├── Footer.vue
+│   │   │   ├── Sidebar.vue
+│   │   │   ├── PostList.vue
+│   │   │   ├── PostDetail.vue
+│   │   │   ├── CategoryList.vue
+│   │   │   ├── TagList.vue
+│   │   │   ├── SearchForm.vue
+│   │   │   ├── Pagination.vue
+│   │   │   └── ...
+│   │   ├── pages/
+│   │   │   ├── Home.vue
+│   │   │   ├── About.vue
+│   │   │   ├── Contact.vue
+│   │   │   ├── Blog.vue
+│   │   │   ├── BlogPost.vue
+│   │   │   ├── Category.vue
+│   │   │   ├── Tag.vue
+│   │   │   ├── Search.vue
+│   │   │   └── ...
+│   │   ├── router/
+│   │   │   └── index.js
+│   │   ├── store/
+│   │   │   ├── index.js
+│   │   │   ├── modules/
+│   │   │   │   ├── auth.js
+│   │   │   │   ├── posts.js
+│   │   │   │   ├── categories.js
+│   │   │   │   ├── tags.js
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   ├── directives/
+│   │   │   ├── click-outside.js
+│   │   │   ├── scroll.js
+│   │   │   └── ...
+│   │   ├── plugins/
+│   │   │   ├── axios.js
+│   │   │   ├── vuex-persist.js
+│   │   │   └── ...
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   ├── constants.js
+│   │   │   ├── filters.js
+│   │   │   └── ...
+│   │   ├── App.vue
+│   │   └── main.js
+│   ├── react/
+│   │   ├── components/
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Sidebar.js
+│   │   │   ├── PostList.js
+│   │   │   ├── PostDetail.js
+│   │   │   ├── CategoryList.js
+│   │   │   ├── TagList.js
+│   │   │   ├── SearchForm.js
+│   │   │   ├── Pagination.js
+│   │   │   └── ...
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── About.js
+│   │   │   ├── Contact.js
+│   │   │   ├── Blog.js
+│   │   │   ├── BlogPost.js
+│   │   │   ├── Category.js
+│   │   │   ├── Tag.js
+│   │   │   ├── Search.js
+│   │   │   └── ...
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── usePosts.js
+│   │   │   ├── useCategories.js
+│   │   │   ├── useTags.js
+│   │   │   └── ...
+│   │   ├── context/
+│   │   │   ├── AuthContext.js
+│   │   │   ├── PostsContext.js
+│   │   │   ├── CategoriesContext.js
+│   │   │   ├── TagsContext.js
+│   │   │   └── ...
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   ├── constants.js
+│   │   │   └── ...
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── next/
+│   │   ├── components/
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Sidebar.js
+│   │   │   ├── PostList.js
+│   │   │   ├── PostDetail.js
+│   │   │   ├── CategoryList.js
+│   │   │   ├── TagList.js
+│   │   │   ├── SearchForm.js
+│   │   │   ├── Pagination.js
+│   │   │   └── ...
+│   │   ├── pages/
+│   │   │   ├── index.js
+│   │   │   ├── about.js
+│   │   │   ├── contact.js
+│   │   │   ├── blog/
+│   │   │   │   ├── index.js
+│   │   │   │   └── [slug].js
+│   │   │   ├── category/
+│   │   │   │   ├── index.js
+│   │   │   │   └── [slug].js
+│   │   │   ├── tag/
+│   │   │   │   ├── index.js
+│   │   │   │   └── [slug].js
+│   │   │   ├── search.js
+│   │   │   └── ...
+│   │   ├── lib/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   ├── constants.js
+│   │   │   └── ...
+│   │   ├── public/
+│   │   │   ├── favicon.ico
+│   │   │   ├── logo.png
+│   │   │   └── ...
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   ├── theme.css
+│   │   │   └── ...
+│   │   ├── next.config.js
+│   │   └── ...
+│   ├── nuxt/
+│   │   ├── components/
+│   │   │   ├── Header.vue
+│   │   │   ├── Footer.vue
+│   │   │   ├── Sidebar.vue
+│   │   │   ├── PostList.vue
+│   │   │   ├── PostDetail.vue
+│   │   │   ├── CategoryList.vue
+│   │   │   ├── TagList.vue
+│   │   │   ├── SearchForm.vue
+│   │   │   ├── Pagination.vue
+│   │   │   └── ...
+│   │   ├── pages/
+│   │   │   ├── index.vue
+│   │   │   ├── about.vue
+│   │   │   ├── contact.vue
+│   │   │   ├── blog/
+│   │   │   │   ├── index.vue
+│   │   │   │   └── _slug.vue
+│   │   │   ├── category/
+│   │   │   │   ├── index.vue
+│   │   │   │   └── _slug.vue
+│   │   │   ├── tag/
+│   │   │   │   ├── index.vue
+│   │   │   │   └── _slug.vue
+│   │   │   ├── search.vue
+│   │   │   └── ...
+│   │   ├── store/
+│   │   │   ├── index.js
+│   │   │   ├── auth.js
+│   │   │   ├── posts.js
+│   │   │   ├── categories.js
+│   │   │   ├── tags.js
+│   │   │   └── ...
+│   │   ├── assets/
+│   │   │   ├── css/
+│   │   │   │   ├── main.css
+│   │   │   │   └── ...
+│   │   │   ├── img/
+│   │   │   │   ├── logo.png
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   ├── plugins/
+│   │   │   ├── axios.js
+│   │   │   ├── filters.js
+│   │   │   └── ...
+│   │   ├── static/
+│   │   │   ├── favicon.ico
+│   │   │   └── ...
+│   │   ├── nuxt.config.js
+│   │   └── ...
+│   └── api/
+│       ├── axios-client.js
+│       ├── post-service.js
+│       ├── category-service.js
+│       ├── tag-service.js
+│       ├── auth-service.js
+│       ├── search-service.js
+│       ├── analytics-service.js
+│       └── ...
+├── plugins/
+│   ├── auth/
+│   │   ├── controllers/
+│   │   │   ├── auth-controller.js
+│   │   │   ├── oauth-controller.js
+│   │   │   ├── jwt-controller.js
+│   │   │   └── ...
+│   │   ├── services/
+│   │   │   ├── auth-service.js
+│   │   │   ├── oauth-service.js
+│   │   │   ├── jwt-service.js
+│   │   │   └── ...
+│   │   ├── models/
+│   │   │   ├── user-model.js
+│   │   │   ├── role-model.js
+│   │   │   ├── permission-model.js
+│   │   │   └── ...
+│   │   ├── events/
+│   │   │   ├── user-registered-event.js
+│   │   │   ├── user-logged-in-event.js
+│   │   │   ├── user-logged-out-event.js
+│   │   │   └── ...
+│   │   ├── routes/
+│   │   │   ├── auth-routes.js
+│   │   │   ├── oauth-routes.js
+│   │   │   ├── jwt-routes.js
+│   │   │   └── ...
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   │   ├── auth-controller.test.js
+│   │   │   │   ├── oauth-controller.test.js
+│   │   │   │   ├── jwt-controller.test.js
+│   │   │   │   ├── auth-service.test.js
+│   │   │   │   ├── oauth-service.test.js
+│   │   │   │   ├── jwt-service.test.js
+│   │   │   │   └── ...
+│   │   │   └── integration/
+│   │   │       ├── auth-routes.test.js
+│   │   │       ├── oauth-routes.test.js
+│   │   │       ├── jwt-routes.test.js
+│   │   │       └── ...
+│   │   └── index.js
+│   └── payment/
+│       ├── controllers/
+│       │   ├── payment-controller.js
+│       │   ├── stripe-controller.js
+│       │   ├── paypal-controller.js
+│       │   └── ...
+│       ├── services/
+│       │   ├── payment-service.js
+│       │   ├── stripe-service.js
+│       │   ├── paypal-service.js
+│       │   └── ...
+│       ├── models/
+│       │   ├── payment-model.js
+│       │   ├── invoice-model.js
+│       │   ├── subscription-model.js
+│       │   └── ...
+│       ├── events/
+│       │   ├── payment-created-event.js
+│       │   ├── payment-failed-event.js
+│       │   ├── invoice-created-event.js
+│       │   ├── subscription-created-event.js
+│       │   ├── subscription-cancelled-event.js
+│       │   └── ...
+│       ├── routes/
+│       │   ├── payment-routes.js
+│       │   ├── stripe-routes.js
+│       │   ├── paypal-routes.js
+│       │   └── ...
+│       ├── tests/
+│       │   ├── unit/
+│       │   │   ├── payment-controller.test.js
+│       │   │   ├── stripe-controller.test.js
+│       │   │   ├── paypal-controller.test.js
+│       │   │   ├── payment-service.test.js
+│       │   │   ├── stripe-service.test.js
+│       │   │   ├── paypal-service.test.js
+│       │   │   └── ...
+│       │   └── integration/
+│       │       ├── payment-routes.test.js
+│       │       ├── stripe-routes.test.js
+│       │       ├── paypal-routes.test.js
+│       │       └── ...
+│       └── index.js
+├── tests/
+│   ├── unit/
+│   │   ├── core/
+│   │   │   ├── app.test.js
+│   │   │   ├── container.test.js
+│   │   │   ├── event-bus.test.js
+│   │   │   ├── logger.test.js
+│   │   │   ├── module-loader.test.js
+│   │   │   ├── error-handler.test.js
+│   │   │   └── ...
+│   │   ├── modules/
+│   │   │   ├── user/
+│   │   │   │   ├── user-controller.test.js
+│   │   │   │   ├── user-service.test.js
+│   │   │   │   ├── user-model.test.js
+│   │   │   │   ├── auth-controller.test.js
+│   │   │   │   ├── auth-service.test.js
+│   │   │   │   └── ...
+│   │   │   ├── content/
+│   │
+│   │   │   │   ├── post-controller.test.js
+│   │   │   │   ├── post-service.test.js
+│   │   │   │   ├── post-model.test.js
+│   │   │   │   ├── category-controller.test.js
+│   │   │   │   ├── category-service.test.js
+│   │   │   │   ├── category-model.test.js
+│   │   │   │   ├── tag-controller.test.js
+│   │   │   │   ├── tag-service.test.js
+│   │   │   │   ├── tag-model.test.js
+│   │   │   │   ├── comment-controller.test.js
+│   │   │   │   ├── comment-service.test.js
+│   │   │   │   ├── comment-model.test.js
+│   │   │   │   ├── page-controller.test.js
+│   │   │   │   ├── page-service.test.js
+│   │   │   │   ├── page-model.test.js
+│   │   │   │   └── ...
+│   │   │   ├── media/
+│   │   │   │   ├── media-controller.test.js
+│   │   │   │   ├── media-service.test.js
+│   │   │   │   ├── media-model.test.js
+│   │   │   │   ├── upload-controller.test.js
+│   │   │   │   ├── upload-service.test.js
+│   │   │   │   ├── upload-model.test.js
+│   │   │   │   └── ...
+│   │   │   ├── search/
+│   │   │   │   ├── search-controller.test.js
+│   │   │   │   ├── search-service.test.js
+│   │   │   │   ├── search-model.test.js
+│   │   │   │   ├── index-controller.test.js
+│   │   │   │   ├── index-service.test.js
+│   │   │   │   ├── index-model.test.js
+│   │   │   │   └── ...
+│   │   │   ├── analytics/
+│   │   │   │   ├── analytics-controller.test.js
+│   │   │   │   ├── analytics-service.test.js
+│   │   │   │   ├── analytics-model.test.js
+│   │   │   │   ├── report-controller.test.js
+│   │   │   │   ├── report-service.test.js
+│   │   │   │   ├── report-model.test.js
+│   │   │   │   └── ...
+│   │   │   └── workflow/
+│   │   │       ├── workflow-controller.test.js
+│   │   │       ├── workflow-service.test.js
+│   │   │       ├── workflow-model.test.js
+│   │   │       ├── task-controller.test.js
+│   │   │       ├── task-service.test.js
+│   │   │       ├── task-model.test.js
+│   │   │       ├── transition-controller.test.js
+│   │   │       ├── transition-service.test.js
+│   │   │       ├── transition-model.test.js
+│   │   │       └── ...
+│   │   └── plugins/
+│   │       ├── auth/
+│   │       │   ├── auth-controller.test.js
+│   │       │   ├── auth-service.test.js
+│   │       │   ├── oauth-controller.test.js
+│   │       │   ├── oauth-service.test.js
+│   │       │   ├── jwt-controller.test.js
+│   │       │   ├── jwt-service.test.js
+│   │       │   └── ...
+│   │       └── payment/
+│   │           ├── payment-controller.test.js
+│   │           ├── payment-service.test.js
+│   │           ├── stripe-controller.test.js
+│   │           ├── stripe-service.test.js
+│   │           ├── paypal-controller.test.js
+│   │           ├── paypal-service.test.js
+│   │           └── ...
+│   ├── integration/
+│   │   ├── core/
+│   │   │   ├── app.test.js
+│   │   │   ├── database.test.js
+│   │   │   ├── cache.test.js
+│   │   │   ├── queue.test.js
+│   │   │   ├── storage.test.js
+│   │   │   └── ...
+│   │   ├── modules/
+│   │   │   ├── user/
+│   │   │   │   ├── user-routes.test.js
+│   │   │   │   ├── auth-routes.test.js
+│   │   │   │   └── ...
+│   │   │   ├── content/
+│   │   │   │   ├── post-routes.test.js
+│   │   │   │   ├── category-routes.test.js
+│   │   │   │   ├── tag-routes.test.js
+│   │   │   │   ├── comment-routes.test.js
+│   │   │   │   └── ...
+│   │   │   ├── media/
+│   │   │   │   ├── media-routes.test.js
+│   │   │   │   ├── upload-routes.test.js
+│   │   │   │   └── ...
+│   │   │   ├── search/
+│   │   │   │   ├── search-routes.test.js
+│   │   │   │   └── ...
+│   │   │   ├── analytics/
+│   │   │   │   ├── analytics-routes.test.js
+│   │   │   │   ├── report-routes.test.js
+│   │   │   │   └── ...
+│   │   │   └── workflow/
+│   │   │       ├── workflow-routes.test.js
+│   │   │       ├── task-routes.test.js
+│   │   │       ├── transition-routes.test.js
+│   │   │       └── ...
+│   │   ├── plugins/
+│   │   │   ├── auth/
+│   │   │   │   ├── auth-routes.test.js
+│   │   │   │   ├── oauth-routes.test.js
+│   │   │   │   ├── jwt-routes.test.js
+│   │   │   │   └── ...
+│   │   │   └── payment/
+│   │   │       ├── payment-routes.test.js
+│   │   │       ├── stripe-routes.test.js
+│   │   │       ├── paypal-routes.test.js
+│   │   │       └── ...
+│   │   └── api/
+│   │       ├── v1/
+│   │       │   ├── user-api.test.js
+│   │       │   ├── content-api.test.js
+│   │       │   ├── media-api.test.js
+│   │       │   ├── search-api.test.js
+│   │       │   ├── analytics-api.test.js
+│   │       │   ├── workflow-api.test.js
+│   │       │   └── ...
+│   │       └── v2/
+│   │           ├── user-api.test.js
+│   │           ├── content-api.test.js
+│   │           ├── media-api.test.js
+│   │           ├── search-api.test.js
+│   │           ├── analytics-api.test.js
+│   │           ├── workflow-api.test.js
+│   │           └── ...
+│   ├── e2e/
+│   │   ├── auth/
+│   │   │   ├── login.test.js
+│   │   │   ├── register.test.js
+│   │   │   ├── logout.test.js
+│   │   │   ├── forgot-password.test.js
+│   │   │   ├── reset-password.test.js
+│   │   │   └── ...
+│   │   ├── content/
+│   │   │   ├── create-post.test.js
+│   │   │   ├── update-post.test.js
+│   │   │   ├── delete-post.test.js
+│   │   │   ├── view-post.test.js
+│   │   │   ├── list-posts.test.js
+│   │   │   ├── create-category.test.js
+│   │   │   ├── update-category.test.js
+│   │   │   ├── delete-category.test.js
+│   │   │   ├── view-category.test.js
+│   │   │   ├── list-categories.test.js
+│   │   │   ├── create-tag.test.js
+│   │   │   ├── update-tag.test.js
+│   │   │   ├── delete-tag.test.js
+│   │   │   ├── view-tag.test.js
+│   │   │   ├── list-tags.test.js
+│   │   │   ├── create-comment.test.js
+│   │   │   ├── update-comment.test.js
+│   │   │   ├── delete-comment.test.js
+│   │   │   ├── view-comment.test.js
+│   │   │   ├── list-comments.test.js
+│   │   │   ├── create-page.test.js
+│   │   │   ├── update-page.test.js
+│   │   │   ├── delete-page.test.js
+│   │   │   ├── view-page.test.js
+│   │   │   ├── list-pages.test.js
+│   │   │   └── ...
+│   │   ├── media/
+│   │   │   ├── upload-media.test.js
+│   │   │   ├── update-media.test.js
+│   │   │   ├── delete-media.test.js
+│   │   │   ├── view-media.test.js
+│   │   │   ├── list-media.test.js
+│   │   │   └── ...
+│   │   ├── search/
+│   │   │   ├── search-posts.test.js
+│   │   │   ├── search-categories.test.js
+│   │   │   ├── search-tags.test.js
+│   │   │   ├── search-media.test.js
+│   │   │   └── ...
+│   │   ├── analytics/
+│   │   │   ├── view-site-analytics.test.js
+│   │   │   ├── view-page-analytics.test.js
+│   │   │   ├── view-post-analytics.test.js
+│   │   │   ├── view-user-analytics.test.js
+│   │   │   ├── generate-report.test.js
+│   │   │   └── ...
+│   │   └── workflow/
+│   │       ├── create-workflow.test.js
+│   │       ├── update-workflow.test.js
+│   │       ├── delete-workflow.test.js
+│   │       ├── view-workflow.test.js
+│   │       ├── list-workflows.test.js
+│   │       ├── create-task.test.js
+│   │       ├── update-task.test.js
+│   │       ├── delete-task.test.js
+│   │       ├── view-task.test.js
+│   │       ├── list-tasks.test.js
+│   │       ├── create-transition.test.js
+│   │       ├── update-transition.test.js
+│   │       ├── delete-transition.test.js
+│   │       ├── view-transition.test.js
+│   │       ├── list-transitions.test.js
+│   │       └── ...
+│   ├── security/
+│   │   ├── authentication/
+│   │   │   ├── authentication.test.js
+│   │   │   ├── authorization.test.js
+│   │   │   ├── password-hashing.test.js
+│   │   │   ├── token-generation.test.js
+│   │   │   ├── token-validation.test.js
+│   │   │   ├── oauth-integration.test.js
+│   │   │   ├── two-factor-auth.test.js
+│   │   │   └── ...
+│   │   ├── input-validation/
+│   │   │   ├── xss-protection.test.js
+│   │   │   ├── sql-injection.test.js
+│   │   │   ├── csrf-protection.test.js
+│   │   │   └── ...
+│   │   ├── access-control/
+│   │   │   ├── role-based-access.test.js
+│   │   │   ├── permission-based-access.test.js
+│   │   │   └── ...
+│   │   ├── secure-communication/
+│   │   │   ├── ssl-tls.test.js
+│   │   │   ├── encryption.test.js
+│   │   │   ├── hsts.test.js
+│   │   │   └── ...
+│   │   └── infrastructure/
+│   │       ├── secure-headers.test.js
+│   │       ├── cors-configuration.test.js
+│   │       ├── rate-limiting.test.js
+│   │       ├── logging-monitoring.test.js
+│   │       └── ...
+│   └── performance/
+│       ├── load-testing/
+│       │   ├── spike-testing.test.js
+│       │   ├── stress-testing.test.js
+│       │   ├── endurance-testing.test.js
+│       │   ├── scalability-testing.test.js
+│       │   └── ...
+│       ├── benchmarking/
+│       │   ├── response-time.test.js
+│       │   ├── throughput.test.js
+│       │   ├── resource-utilization.test.js
+│       │   └── ...
+│       └── profiling/
+│           ├── cpu-profiling.test.js
+│           ├── memory-profiling.test.js
+│           ├── i-o-profiling.test.js
+│           ├── database-query-profiling.test.js
+│           └── ...
+├── docs/
+│   ├── api/
+│   │   ├── swagger.yml
+│   │   ├── openapi.json
+│   │   └── postman_collection.json
+│   ├── architecture/
+│   │   ├── system-architecture.md
+│   │   ├── database-schema.md
+│   │   ├── api-design.md
+│   │   ├── security-measures.md
+│   │   └── ...
+│   ├── guides/
+│   │   ├── getting-started.md
+│   │   ├── deployment.md
+│   │   ├── testing.md
+│   │   ├── performance-optimization.md
+│   │   ├── monitoring.md
+│   │   ├── logging.md
+│   │   ├── troubleshooting.md
+│   │   └── ...
+│   ├── references/
+│   │   ├── api-endpoints.md
+│   │   ├── event-list.md
+│   │   ├── error-codes.md
+│   │   └── ...
+│   ├── faqs.md
+│   ├── changelog.md
+│   ├── license.md
+│   └── contributing.md
+├── scripts/
+│   ├── deploy.sh
+│   ├── start.sh
+│   ├── test.sh
+│   ├── lint.sh
+│   ├── db-migrate.sh
+│   ├── db-seed.sh
+│   └── ...
+├── .gitignore
+├── .eslintrc.js
+├── .prettierrc.js
+├── .babelrc
+├── .env
+├── .env.example
+├── .dockerignore
+├── Dockerfile
+├── docker-compose.yml
+├── package.json
+├── package-lock.json
+└── README.md
