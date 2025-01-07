@@ -1,0 +1,243 @@
+src/
+├── config/
+│   ├── app.js
+│   ├── database.js
+│   ├── cache.js
+│   ├── queue.js
+│   ├── storage.js
+│   ├── auth.js
+│   ├── roles.js
+│   ├── plugins.js
+│   ├── security.js
+│   ├── logger.js
+│   ├── docs.js
+│   ├── filesystems.js
+│   └── cors.js
+├── core/
+│   ├── app.js
+│   ├── container.js
+│   ├── event-bus.js
+│   ├── logger.js
+│   ├── module-loader.js
+│   ├── error-handler.js
+│   ├── security/
+│   │   ├── authentication.js
+│   │   ├── authorization.js
+│   │   ├── encryption.js
+│   │   ├── validation.js
+│   │   └── sanitization.js
+│   ├── logging/
+│   │   ├── logger-factory.js
+│   │   ├── formatters/
+│   │   └── handlers/
+│   ├── filesystem/
+│   │   ├── filesystem-manager.js
+│   │   └── drivers/
+│   └── cors/
+│       └── cors-middleware.js
+├── modules/
+│   ├── user/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   ├── content/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   ├── media/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   ├── search/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   ├── analytics/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   ├── workflow/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   └── api/
+│       ├── controllers/
+│       ├── middlewares/
+│       ├── routes/
+│       ├── tests/
+│       ├── v1/
+│       └── v2/
+├── infrastructure/
+│   ├── database/
+│   │   ├── migrations/
+│   │   ├── seeders/
+│   │   ├── models/
+│   │   └── index.js
+│   ├── cache/
+│   │   ├── redis-cache.js
+│   │   └── memory-cache.js
+│   ├── queue/
+│   │   ├── bull-queue.js
+│   │   └── job-processor.js
+│   ├── storage/
+│   │   ├── local-storage.js
+│   │   ├── s3-storage.js
+│   │   └── storage-manager.js
+│   ├── logger/
+│   │   ├── console-logger.js
+│   │   ├── file-logger.js
+│   │   └── logger-manager.js
+│   ├── docs/
+│   │   ├── swagger/
+│   │   ├── jsdoc/
+│   │   └── postman/
+│   └── filesystem/
+│       ├── local-driver.js
+│       └── s3-driver.js
+├── interfaces/
+│   ├── http/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── requests/
+│   │   ├── responses/
+│   │   └── routes.js
+│   ├── graphql/
+│   │   ├── schemas/
+│   │   ├── resolvers/
+│   │   └── index.js
+│   ├── cli/
+│   │   ├── commands/
+│   │   └── index.js
+│   ├── websocket/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── channels/
+│   │   └── index.js
+│   └── sse/
+│       ├── controllers/
+│       ├── middlewares/
+│       ├── events/
+│       └── index.js
+├── domain/
+│   ├── user/
+│   │   ├── user.js
+│   │   ├── user-service.js
+│   │   └── user-events.js
+│   ├── content/
+│   │   ├── content.js
+│   │   ├── content-service.js
+│   │   └── content-events.js
+│   ├── media/
+│   │   ├── media.js
+│   │   ├── media-service.js
+│   │   └── media-events.js
+│   ├── search/
+│   │   ├── search.js
+│   │   ├── search-service.js
+│   │   └── search-events.js
+│   ├── analytics/
+│   │   ├── analytics.js
+│   │   ├── analytics-service.js
+│   │   └── analytics-events.js
+│   ├── workflow/
+│   │   ├── workflow.js
+│   │   ├── workflow-service.js
+│   │   └── workflow-events.js
+│   └── listeners/
+│       ├── user-listener.js
+│       ├── content-listener.js
+│       └── ...
+├── ui/
+│   ├── themes/
+│   │   ├── default/
+│   │   └── admin/
+│   ├── views/
+│   │   ├── pages/
+│   │   ├── partials/
+│   │   └── layouts/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── img/
+│   ├── vue/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── router/
+│   │   ├── store/
+│   │   └── app.js
+│   ├── react/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   └── app.js
+│   ├── next/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── lib/
+│   │   ├── public/
+│   │   └── styles/
+│   ├── nuxt/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   ├── assets/
+│   │   └── nuxt.config.js
+│   └── api/
+│       ├── axios-client.js
+│       └── api-service.js
+├── plugins/
+│   ├── auth/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── events/
+│   │   ├── routes/
+│   │   ├── tests/
+│   │   └── index.js
+│   └── payment/
+│       ├── controllers/
+│       ├── services/
+│       ├── models/
+│       ├── events/
+│       ├── routes/
+│       ├── tests/
+│       └── index.js
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   ├── e2e/
+│   ├── security/
+│   └── performance/
+├── docs/
+│   ├── api/
+│   │   ├── swagger.yml
+│   │   └── postman_collection.json
+│   ├── database/
+│   │   └── schema.md
+│   └── contributing.md
+└── index.js
